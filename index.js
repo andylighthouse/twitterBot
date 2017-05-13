@@ -8,7 +8,36 @@ var bot = new Twit({
   timeout_ms: 60000
 });
 
+//get most recent twits, limited by count
+function getTwits(){
+  bot.get('statuses/home_timeline', {count: 5}, 
+    function(err, data, response){
+    if(err){
+        console.log(err);
+      }else{
+        data.forEach(function(twit){
+          console.log(twit.text);
+          console.log(twit.user.screen_name);
+          console.log(twit.id_str);
+          console.log('\n');
+      })
+    }
+  })
+}
 
+//===========================================
+//search API
+bot.get('search/tweets', {}, function(err, data, response){
+  if (err){
+    console.log(err);
+  }else{
+    
+  }
+})
+
+
+//===========================================
+//simple thing I can do with twitter
 // //making a twit, put message in status
 // bot.post('statuses/update', {status: 'Hello World, testing!'}, function(err, data, response){
 //   if(err){
@@ -68,22 +97,48 @@ var bot = new Twit({
 //     }
 // });
 
-//get most recent twits, limited by count
-function getTwits(){
-  bot.get('statuses/home_timeline', {count: 5}, 
-    function(err, data, response){
-    if(err){
-        console.log(err);
-      }else{
-        data.forEach(function(twit){
-          console.log(twit.text);
-          console.log(twit.user.screen_name);
-          console.log(twit.id_str);
-          console.log('\n');
-      })
-    }
-  })
-}
 
-getTwits();
+// //retweet
+// //unretweet
+// //the id of the retweet
+// bot.post('statuses/retweet/:id', {id: '862732821219115008'},
+//   function(err, data, response){
+//     if(err){
+//       console.log(err);
+//     }else{
+//       console.log(data.text+ 'was retweeted!');
+//     }
+// });
+
+// //like a twit
+// //'favorites/destroy' to unlike
+// bot.post('favorites/create', {id: '862732821219115008'},
+//   function(err, data, response){
+//     if(err){
+//       console.log(err);
+//     }else{
+//       console.log(data.text+ 'was liked!');
+//     }
+// });
+
+// //replay to twit
+// bot.post('statuses/update', {status: '@TWITTER_HANDLE MESSAGE', in_reply_to_status_id: '862732821219115008'},
+//   function(err, data, response){
+//     if(err){
+//       console.log(err);
+//     }else{
+//       console.log(data);
+//     }
+// });
+
+// //delete a post
+// bot.post('statuses/destroy/:id', {id: '862732821219115008'},
+//   function(err, data, response){
+//     if(err){
+//       console.log(err);
+//     }else{
+//       console.log(data.text+ 'was deleted!');
+//     }
+// });
+
 
