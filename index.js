@@ -8,37 +8,52 @@ var bot = new Twit({
   timeout_ms: 60000
 });
 
-//get most recent twits, limited by count
+//get most recent tweets, limited by count
 function getTwits(){
   bot.get('statuses/home_timeline', {count: 5}, 
     function(err, data, response){
     if(err){
         console.log(err);
       }else{
-        data.forEach(function(twit){
-          console.log(twit.text);
-          console.log(twit.user.screen_name);
-          console.log(twit.id_str);
+        data.forEach(function(tweet){
+          console.log(tweet.text);
+          console.log(tweet.user.screen_name);
+          console.log(tweet.id_str);
           console.log('\n');
-      })
+      });
     }
-  })
+  });
 }
 
-//===========================================
-//search API
-bot.get('search/tweets', {}, function(err, data, response){
-  if (err){
-    console.log(err);
-  }else{
-    
-  }
-})
+// //===========================================
+// //stream api
+// //track = parameter
+// var stream = bot.stream('statuses/filter', {track: 'nba, trump'});
+
+// stream.on('tweet', function(tweet){
+//   console.log(tweet.text+'\n');
+// });
+
+// //===========================================
+// //search api
+// //q = querry
+// bot.get('search/tweets', {q: '#nba', result_type: 'popular', count: 10}, 
+//   function(err, data, response){
+//   if (err){
+//     console.log(err);
+//   }else{
+//     data.statuses.forEach(function(tweet){
+//       console.log(tweet.text);
+//       console.log(tweet.user.screen_name);
+//       console.log('\n');
+//     })
+//   }
+// })
 
 
-//===========================================
-//simple thing I can do with twitter
-// //making a twit, put message in status
+// //===========================================
+// //simple thing you can do with twitter
+// //making a tweet, put message in status
 // bot.post('statuses/update', {status: 'Hello World, testing!'}, function(err, data, response){
 //   if(err){
 //     console.log(err);
@@ -110,7 +125,7 @@ bot.get('search/tweets', {}, function(err, data, response){
 //     }
 // });
 
-// //like a twit
+// //like a tweet
 // //'favorites/destroy' to unlike
 // bot.post('favorites/create', {id: '862732821219115008'},
 //   function(err, data, response){
@@ -121,7 +136,7 @@ bot.get('search/tweets', {}, function(err, data, response){
 //     }
 // });
 
-// //replay to twit
+// //replay to tweet
 // bot.post('statuses/update', {status: '@TWITTER_HANDLE MESSAGE', in_reply_to_status_id: '862732821219115008'},
 //   function(err, data, response){
 //     if(err){
