@@ -1,4 +1,5 @@
 # twitterBot
 
 Working with node.js
-Using RiTa.js
+using RiTa.js
+Work in progress...
