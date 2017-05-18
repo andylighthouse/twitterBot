@@ -1,4 +1,4 @@
-var Twit = require('twit');
+var bot = require('./twit')
 var request = require('request');
 var fs = require('fs');
 

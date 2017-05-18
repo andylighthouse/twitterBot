@@ -1,12 +1,4 @@
-var Twit = require('twit');
-
-var bot = new Twit({
-  consumer_key: process.env.TWITTERBOT_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTERBOT_CONSUMER_SECRET,
-  access_token: process.env.TWITTERBOT_ACCESS_TOKEN,
-  access_token_secret: process.env.TWITTERBOT_ACCESS_TOKEN_SECRET,
-  timeout_ms: 60000
-});
+var bot = require('./twit')
 
 //get most recent tweets, limited by count
 function getTwits(){
@@ -16,7 +8,7 @@ function getTwits(){
         console.log(err);
       }else{
         data.forEach(function(tweet){
-          console.log(tweet.text);
+          console.log(tweet.text)
           console.log(tweet.user.screen_name);
           console.log(tweet.id_str);
           console.log('\n');
@@ -24,16 +16,14 @@ function getTwits(){
     }
   });
 }
+//===========================================
+//stream api
+//show all the tweets that are being posted which contains the words after track
+var stream = bot.stream('statuses/filter', {track: 'nba, trump'});
 
-
-// //===========================================
-// //stream api
-// //track = parameter
-// var stream = bot.stream('statuses/filter', {track: 'nba, trump'});
-
-// stream.on('tweet', function(tweet){
-//   console.log(tweet.text+'\n');
-// });
+stream.on('tweet', function(tweet){
+  console.log(tweet.text+'\n');
+});
 
 // //===========================================
 // //search api
