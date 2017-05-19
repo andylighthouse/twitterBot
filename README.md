@@ -1,6 +1,6 @@
 # twitterBot
 
--Working with node.js
+-Playing around with twitter api
 
 -Using RiTa.js
 
