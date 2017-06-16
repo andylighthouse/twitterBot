@@ -1,0 +1,6 @@
+"tweet_id","in_reply_to_status_id","in_reply_to_user_id","timestamp","source","text","retweeted_status_id","retweeted_status_user_id","retweeted_status_timestamp","expanded_urls"
+"867989274808823808","","","2017-05-26 06:22:24 +0000","<a href=""http://twitter.com"" rel=""nofollow"">Twitter Web Client</a>","working with rita.js","","","",""
+"867989200171180032","","","2017-05-26 06:22:06 +0000","<a href=""http://twitter.com"" rel=""nofollow"">Twitter Web Client</a>","twitter bot up and running","","","",""
+"863650756825456641","","","2017-05-14 07:02:40 +0000","<a href=""http://example.com"" rel=""nofollow"">My Bot 2017</a>","Ganymede: The Largest Moon https://t.co/pfFeQ1zXZ9","","","","https://twitter.com/sugacity99/status/863650756825456641/photo/1"
+"862737820040941568","","","2017-05-11 18:34:59 +0000","<a href=""http://example.com"" rel=""nofollow"">My Bot 2017</a>","RT @VancityBuzz: Yes, this is real life. You can get matcha fries at @twgteaca in #Vancouver😱 https://t.co/kAAfwbA9Fc @DailyHiveFood #dhvan…","862732821219115008","19314850","2017-05-11 18:15:08 +0000","http://ow.ly/FcEK30bDUiZ,http://ow.ly/FcEK30bDUiZ,https://twitter.com/VancityBuzz/status/862732821219115008/photo/1"
+"862733414977359872","","","2017-05-11 18:17:29 +0000","<a href=""http://example.com"" rel=""nofollow"">My Bot 2017</a>","Hello World, testing!","","","",""
