@@ -4,6 +4,6 @@
 
 -using RiTa.js to make bot sound like me, working with markov chain
 
--using google cloud api to identity emotions in photo tweets
+-using google cloud vision api to identity emotions in photo tweets
 
 Work in progress...
