@@ -1,7 +1,7 @@
 # twitterBot
 
--Playing around with twitter api
+-playing around with twitter api
 
--Using RiTa.js, working with markov chain
+-using RiTa.js to make bot sound like me, working with markov chain
 
 Work in progress...
